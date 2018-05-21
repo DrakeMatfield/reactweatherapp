@@ -1,7 +1,8 @@
-﻿// JScript File
+// JScript File
 "use strict"
-var WeatherObj = require("./Weather.js");
+//var WeatherObj = require("./Weather.js");
 
+//var WeatherObj = require("./Weather.js");
 
 function ParseWeatherYahoo(yahoo_Weather_Object)
 {  
@@ -12,7 +13,7 @@ var weatherObject = {};
     var title = yahoo_Weather_Object.query.results.channel.item.title;
     var current_date = yahoo_Weather_Object.query.results.channel.lastBuildDate;
 
-    weatherObject = new WeatherObj.Weather(title, current_date);
+    weatherObject = new Weather(title, current_date);
 
     weatherObject.Create_Location(yahoo_Weather_Object.query.results.channel.location.city, yahoo_Weather_Object.query.results.channel.location.region, yahoo_Weather_Object.query.results.channel.location.country);
     weatherObject.Location.add_ExactLocation(yahoo_Weather_Object.query.results.channel.item.lat, yahoo_Weather_Object.query.results.channel.item.long);
@@ -47,8 +48,8 @@ return weatherObject;
 
 function create_forecast(currentValue, index, arr){
     
-    var day = new WeatherObj.Weather_Forecast();
-   
+   // var day = new WeatherObj.Weather_Forecast();
+   var day = new Weather_Forecast();
     day.date = currentValue.date;
     day.day = currentValue.day;
     day.high= currentValue.high;
@@ -77,7 +78,7 @@ function parse_picture(description_PARSE, current_Condition_text) {
     start = 0;
     end = description_PARSE.indexOf('>');
     res = description_PARSE.substring(start, end + 1);
-
+// react class now is className
     res = res.replace("<img ", "<img id=\"id_condition_pic\" class=\"imgcondition\"");
     
     var img_tag = res.toString();
@@ -92,4 +93,4 @@ function parse_picture(description_PARSE, current_Condition_text) {
   return res;
 }
 
-module.exports.parse = ParseWeatherYahoo;
+//module.exports.parse = ParseWeatherYahoo;

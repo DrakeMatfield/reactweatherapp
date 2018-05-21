@@ -1,7 +1,7 @@
 ﻿// JScript File
 "use strict"
-var Date_Time = require("./ISO_DateFormat.js");
-
+//var Date_Time = require("./ISO_DateFormat.js");
+//var Date_Time = new Date_Time(); //require("./ISO_DateFormat.js");
 // The way to implement the array.
 //this. days = [];
 //days.push(forecasts.map(create_forecast));
@@ -149,5 +149,5 @@ Weather.prototype.get_current_weather_timestamp =  function(timestamp_key){
 return this.Current_Date_Time.get_Formated_timestamp(timestamp_key);
 }
 
-module.exports.Weather = Weather;
-module.exports.Weather_Forecast = Weather_Forecast;
+//module.exports.Weather = Weather;
+//module.exports.Weather_Forecast = Weather_Forecast;

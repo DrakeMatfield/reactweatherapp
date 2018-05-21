@@ -161,4 +161,4 @@ function get_year(dateORtime) {
   return "This function have not been implemented.";
 }
 
-module.exports = Date_Time;
+//module.exports = Date_Time;
